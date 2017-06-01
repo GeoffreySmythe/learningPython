@@ -166,6 +166,124 @@ if __name__ == '__main__':
     print ('such great module!!!')
 '''
 # Getting user input
-
+'''
 x = raw_input ('What is your name? ')
 print ('Hello ', x)
+'''
+
+# Statistics
+'''
+import statistics
+
+example_list = [4,1,2,4,5,1,2,3,4]
+# Variance, standard deviation, median 
+x = statistics.variance (example_list)
+print (x)
+'''
+
+# Module import (Module is a python script)
+'''
+import statistics as s 
+from statistics import variance as v, mean as m
+# from statistics import *
+
+example_list = [1,1,2,3,4,5,6]
+x = v (example_list)
+print (x)
+'''
+# Making Modules
+'''
+import newModule as n
+
+x = raw_input ('Type something')
+n.ex (x)
+'''
+
+# Lists (Can change it) and Tuples (Can't change it), Sequance unpacking
+'''
+x = 5,1,2,1     # A tuple
+x = (5,1,2,1,2) # A tuple
+
+y = [1,2,1,2]   # A list
+
+def example():
+    return 15,6
+
+print (x[0])
+'''
+
+# List Manipulation
+'''
+x = [0,1,22,92,3,4,5,6,6,6,7,8,9]
+y = ['Janet', 'Tom', 'Jessy', 'Kelly', 'Bob']
+print (x)
+# x.append (2)
+
+# x.insert (2, 99)
+
+# x.remove (x[5])
+x.remove (5)
+print (x[5:7]) # prints 5, 6 and stops at 7
+print (x[-1]) # last element
+print (x.index (1))
+print (x.count (6))
+x.sort()
+print (x)
+y.sort()
+print (y)
+'''
+# Multi-dimensional list
+'''
+x = [
+        [5, 6], [6, 7], [7, 2], [2, 5]
+    ]
+print (x[0][0])
+'''
+
+# Reading from a CSV spreadsheet (Comma separated variables), Try and Except error handling
+'''
+import csv
+
+with open ('example.csv') as csvfile:
+    readCSV = csv.reader (csvfile, delimiter = ',')
+
+    names = []
+    heights = []
+    countries = []
+
+    for row in readCSV:
+        name = row[0]
+        height = row[1]
+        country = row[2]
+
+        names.append (name)
+        heights.append (height)
+        countries.append (country)
+
+    print (names)
+    print (heights)
+    print (countries)
+
+    try:
+        whatName = raw_input ('Enter name, i will give you height')
+
+        if whatName in names:
+            nameDex = names.index (whatName)
+
+            whatCountry = countries [nameDex]
+
+            print (heights[nameDex], '   ', whatCountry)
+        else:
+            print ('Name not found, or is not a name')
+    
+    except Exception as e:
+        print (e)
+
+    print ('continuing')
+'''
+# Multi-line print
+
+# print (''' Something ''')
+
+# Dictionaries
+
